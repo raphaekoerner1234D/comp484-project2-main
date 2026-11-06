@@ -107,29 +107,29 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function animation(activity) {
       // treat animation
       if (activity == "treat") {
-        $('.pet-image').animate({top: "-40px"});
-        $('.pet-image').animate({top: "+40px"});
+        $('.pet-image').animate({bottom: "-40px"});
+        $('.pet-image').animate({bottom: "+40px"});
         // play animation
       }else if(activity == "play") {
         $('.pet-image').animate({right: "-60px"});
         $('.pet-image').animate({right: "+60px"});
         // exercise animation
       }else if (activity == "exercise") {
-        $('.pet-image').animate({top: "-40px"});
-        $('.pet-image').animate({left: "-40px"});
-        $('.pet-image').animate({left: "+40px"});
+        $('.pet-image').animate({bottom: "-40px"});
+        $('.pet-image').animate({right: "-40px"});
+        $('.pet-image').animate({right: "+40px"});
         $('.pet-image').animate({bottom: "-40px"});
 
-        $('.pet-image').animate({top: "+40px"});
-        $('.pet-image').animate({left: "-40px"});
-        $('.pet-image').animate({left: "+40px"});
+        $('.pet-image').animate({bottom: "+40px"});
+        $('.pet-image').animate({right: "-40px"});
+        $('.pet-image').animate({right: "+40px"});
         $('.pet-image').animate({bottom: "+40px"});
         // jump animation
       }else if (activity == "jump") {
-        $('.pet-image').animate({top: "-60px"});
-        $('.pet-image').animate({top: "+60px"});
-        $('.pet-image').animate({top: "-60px"});
-        $('.pet-image').animate({top: "+60px"});
+        $('.pet-image').animate({bottom: "-60px"});
+        $('.pet-image').animate({bottom: "+60px"});
+        $('.pet-image').animate({bottom: "-60px"});
+        $('.pet-image').animate({bottom: "+60px"});
       }
     }
 
