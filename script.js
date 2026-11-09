@@ -17,6 +17,12 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     // convert weight and happiness to integer values
     pet_info.weight = Number.parseInt(pet_info.weight);
     pet_info.happiness = Number.parseInt(pet_info.happiness);
+
+    // Sound effects
+    var treatSound = new Audio("sounds/treat.mp3");
+    var playSound = new Audio("sounds/play.mp3");
+    var exerciseSound = new Audio("sounds/exercise.mp3");
+    var jumpSound = new Audio("sounds/jump.mp3");
   
     function clickedTreatButton() {
       // Increase pet happiness
@@ -33,6 +39,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.comment').delay(4000).fadeOut(2000);
       // animation for treat button
       animation("treat");
+      // Sound for treat button
+      treatSound.play();
       checkAndUpdatePetInfoInHtml();
     }
     
@@ -51,6 +59,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.comment').delay(4000).fadeOut(2000);
       // animation for play button
       animation("play");
+      // Sound for play button
+      playSound.play();
       checkAndUpdatePetInfoInHtml();
     }
     
@@ -64,6 +74,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.comment').delay(4000).fadeOut(2000);
 
       animation("exercise");
+      // Sound for exercise button
+      exerciseSound.play();
       checkAndUpdatePetInfoInHtml();
     }
 
@@ -77,6 +89,8 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
       $('.comment').delay(4000).fadeOut(2000);
 
       animation("jump");
+      // Sound for jump button
+      jumpSound.play();
       checkAndUpdatePetInfoInHtml();
     }
   
