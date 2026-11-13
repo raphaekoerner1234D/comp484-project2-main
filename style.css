@@ -86,8 +86,37 @@
     background-image: linear-gradient(to bottom,rgba(246,246,246,.1)0%,rgba(30,40,53,0)66%);
     color: #fafafa;
   }
-
+  /* comment appears after a interaction*/
   .comment {
     color: yellow;
+  }
+/* a bar for the current status of weight*/
+  .gaugeBar {
+    width: 100%;
+    height: 20px;
+    background-color: black;
+    border-radius: 20px;
+  }
+
+  .weightBar {
+    width: 100%;
+    height: 20px;
+    background-color: green;
+    border-radius: 20px;
+  }
+
+  /* current status of happiness*/
+  .gaugeHappiness {
+    width:  100%;
+    height: 20px;
+    background-color: black;
+    border-radius: 20px;
+  }
+
+  .happinessBar {
+    width: 100%;
+    height: 20px;
+    background-color: green;
+    border-radius: 20px;
   }
   

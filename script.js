@@ -23,6 +23,12 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     var playSound = new Audio("sounds/play.mp3");
     var exerciseSound = new Audio("sounds/exercise.mp3");
     var jumpSound = new Audio("sounds/jump.mp3");
+
+    var minimumWeight = 0;
+    var maximumWeight = 3000;
+
+    var minimumHappiness = 0;
+    var maximumHappiness = 1000;
   
     function clickedTreatButton() {
       // Increase pet happiness
@@ -97,16 +103,24 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
     function checkAndUpdatePetInfoInHtml() {
       checkWeightAndHappinessBeforeUpdating();  
       updatePetInfoInHtml();
+      updateWeightBar();
+      updateHappinessBar();
     }
     
     function checkWeightAndHappinessBeforeUpdating() {
       // Add conditional so if weight is lower than zero.
-      if (pet_info.weight < 0) {
-        pet_info.weight = 0
+      if (pet_info.weight < minimumWeight) {
+        pet_info.weight = minimumWeight;
+      }
+      if (pet_info.weight >= maximumWeight) {
+        pet_info.weight = maximumWeight;
       }
       // Add conditional so if happiness is lower than zero.
-      if (pet_info.happiness < 0) {
-        pet_info.happiness = 0
+      if (pet_info.happiness < minimumHappiness) {
+        pet_info.happiness = minimumHappiness;
+      }
+      if (pet_info.happiness >= maximumHappiness) {
+        pet_info.happiness = maximumHappiness;
       }
     }
     
@@ -145,6 +159,31 @@ $(function() { // Makes sure that your function is called once all the DOM eleme
         $('.pet-image').animate({bottom: "-60px"});
         $('.pet-image').animate({bottom: "+60px"});
       }
+    }
+    /* determine the weight value and update the bar with ne values*/
+    function updateWeightBar() {
+
+      var percentageWeight = ((pet_info.weight / maximumWeight) * 100);
+
+      if ( percentageWeight >= maximumWeight) {
+        percentageWeight = maximumWeight;
+      }
+
+      $('.weightBar').text(pet_info.weight + "/" + maximumWeight);
+      $('.weightBar').animate({width: percentageWeight + "%"});
+    }
+
+    /* determine the happiness value and update the bar with new values*/
+    function updateHappinessBar() {
+
+      var percentageHappiness = ((pet_info.happiness / maximumHappiness) * 100);
+
+      if ( percentageHappiness >= maximumHappiness) {
+        percentageHappiness = maximumHappiness;
+      }
+
+      $('.happinessBar').text(pet_info.happiness + "/" + maximumHappiness);
+      $('.happinessBar').animate({width: percentageHappiness + "%"});
     }
 
     
